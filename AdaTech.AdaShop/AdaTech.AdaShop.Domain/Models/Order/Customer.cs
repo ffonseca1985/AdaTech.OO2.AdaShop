@@ -2,8 +2,8 @@
 
 namespace AdaTech.AdaShop.Domain.Models.Order
 {
-    public class Customer : IEntity
+    public class Customer : User
     {
-        public string ID { get; private set; }
+
     }
 }
