@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AdaTech.AdaShop.Domain.Models.Order
 {
-    public class Address : ICepValidator
+    public class Address : ICepValidator, INumberValidator
     {
         private string _cep;
         public string Street { get; private set; }
@@ -22,7 +22,7 @@ namespace AdaTech.AdaShop.Domain.Models.Order
             get { return _cep; }
             private set
             {
-                if (ICepValidator.IsValid(value))
+                if (ICepValidator.IsCepValid(value))
                 {
                     _cep = value;
                 }

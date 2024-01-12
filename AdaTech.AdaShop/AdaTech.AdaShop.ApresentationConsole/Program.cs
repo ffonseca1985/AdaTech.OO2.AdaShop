@@ -20,11 +20,18 @@
 
                 var address1 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "40280000");
 
-                //var address2 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "4028000"); 
-                    //Output: O cep deve ter 8 caracteres.
-                //var address3 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "40-80000"); 
-                    //Output:O cep só pode ser composto por algarismos numéricos.
+                //Cep Validations
 
+                //var address2 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "4028000");
+                //Output: O cep deve ter 8 caracteres.
+                //var address3 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "40-80000");
+                //Output:O cep só pode ser composto por algarismos numéricos.
+                //var address4 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", null);
+                ////Output: Value cannot be null. (Parameter 'Cep')
+                //var address5 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "");
+                ////Output: Value cannot be null. (Parameter 'Cep')
+
+                Console.WriteLine("Deu tudo certo!");
             }
             catch (Exception ex)
             {
