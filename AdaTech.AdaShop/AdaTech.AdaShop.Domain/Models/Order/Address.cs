@@ -9,22 +9,16 @@ namespace AdaTech.AdaShop.Domain.Models.Order
 {
     internal class Address
     {
-        private string rua;
-        private string bairro;
-        private string cidade;
-        private string estado;
-        private string cep;
-        private int numero;
-        private string completmento;
-
-        public string Rua { get; set; }
-        public string Bairro { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
+        public string Street { get; private set; }
+        public string Number { get; private set; }
+        public string Neighborhood { get; private set; }
+        public string Complement { get; private set; }
+        public string City { get; private set; }
+        public string State { get; private set; }
         public string Cep
         {
-            get { return cep; }
-            set
+            get { return Cep; }
+            private set
             {
                 if(value.Length != 8) 
                 {
@@ -36,11 +30,5 @@ namespace AdaTech.AdaShop.Domain.Models.Order
                 }
             }
         }
-        public int Numero { get; set; }
-        public string Complemento { get; set; }
-
-
-
-
     }
 }
