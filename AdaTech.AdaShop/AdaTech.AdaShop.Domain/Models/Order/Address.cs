@@ -1,15 +1,12 @@
-﻿using AdaTech.AdaShop.Domain.Models.Interfaces;
+﻿using AdaTech.AdaShop.Domain.Models.Validators;
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdaTech.AdaShop.Domain.Models.Order
 {
-    public class Address : ICepValidator, INumberValidator
+    public class Address : ICepValidator
     {
+        private readonly NumberValidator<string> numberValidator = new NumberValidator<string>();
+
         private string _cep;
         private string _number;
         public string Street { get; private set; }
@@ -18,18 +15,20 @@ namespace AdaTech.AdaShop.Domain.Models.Order
             get { return _number; }
             private set
             {
-                if (INumberValidator.IsValid(value, "Número"))
+                if (numberValidator.IsNumberValid(value, "Número"))
                 {
                     _number = value;
                 }
             }
         }
+
         public string Neighborhood { get; private set; }
         public string Complement { get; private set; }
         public string City { get; private set; }
         public string State { get; private set; }
-            public string Cep
-            {
+
+        public string Cep
+        {
             get { return _cep; }
             private set
             {
