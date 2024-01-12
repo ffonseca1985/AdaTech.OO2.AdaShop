@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdaTech.AdaShop.Domain.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -7,26 +8,23 @@ using System.Threading.Tasks;
 
 namespace AdaTech.AdaShop.Domain.Models.Order
 {
-    internal class Address
+    public class Address : ICepValidator
     {
+        private string _cep;
         public string Street { get; private set; }
         public string Number { get; private set; }
         public string Neighborhood { get; private set; }
         public string Complement { get; private set; }
         public string City { get; private set; }
         public string State { get; private set; }
-        public string Cep
-        {
-            get { return Cep; }
+            public string Cep
+            {
+            get { return _cep; }
             private set
             {
-                if(value.Length != 8) 
+                if (ICepValidator.IsValid(value))
                 {
-                    throw new ArgumentException("Cep inválido");
-                }
-                else
-                {
-                    Cep = value;
+                    _cep = value;
                 }
             }
         }
@@ -34,7 +32,6 @@ namespace AdaTech.AdaShop.Domain.Models.Order
         public Address(string street, string number, string complement, string neighborhood, string city, string state, string cep)
         {
             Street = street;
-            Cep = cep;
             Number = number;
             Complement = complement;
             Neighborhood = neighborhood;
