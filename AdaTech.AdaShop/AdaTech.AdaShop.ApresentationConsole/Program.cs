@@ -18,10 +18,8 @@
                 var order1 = new OrderAggregate(customer: null, shippingCompany: correiosShippingCompany);
                 var order2 = new OrderAggregate(customer: null, shippingCompany: uberShippingCompany);
 
-                var address1 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "40280000");
-
                 //Cep Validations
-
+                var address1 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "40280000");
                 //var address2 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "4028000");
                 //Output: O cep deve ter 8 caracteres.
                 //var address3 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "40-80000");
@@ -30,6 +28,12 @@
                 ////Output: Value cannot be null. (Parameter 'Cep')
                 //var address5 = new Address("Rua1", "2", "Casa", "Bairro1", "Cidade1", "Estado1", "");
                 ////Output: Value cannot be null. (Parameter 'Cep')
+
+                //Number Validations
+                var address6 = new Address("Rua1", "12", "Casa", "Bairro1", "Cidade1", "Estado1", "40280000");
+                //var address7 = new Address("Rua1", "", "Casa", "Bairro1", "Cidade1", "Estado1", "40280000");
+                //var address8 = new Address("Rua1", null, "Casa", "Bairro1", "Cidade1", "Estado1", "40280000");
+                //var address9 = new Address("Rua1", "a", "Casa", "Bairro1", "Cidade1", "Estado1", "40280000");
 
                 Console.WriteLine("Deu tudo certo!");
             }

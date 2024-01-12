@@ -11,8 +11,19 @@ namespace AdaTech.AdaShop.Domain.Models.Order
     public class Address : ICepValidator, INumberValidator
     {
         private string _cep;
+        private string _number;
         public string Street { get; private set; }
-        public string Number { get; private set; }
+        public string Number
+        {
+            get { return _number; }
+            private set
+            {
+                if (INumberValidator.IsValid(value, "Número"))
+                {
+                    _number = value;
+                }
+            }
+        }
         public string Neighborhood { get; private set; }
         public string Complement { get; private set; }
         public string City { get; private set; }
