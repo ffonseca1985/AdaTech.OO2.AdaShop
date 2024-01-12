@@ -1,24 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace AdaTech.AdaShop.Domain.Models.Interfaces
 {
-    internal interface ICepValidator
+    internal interface ICepValidator : INumberValidator
     {
-        internal static bool IsValid(string cepToValidate) {
-            if(string.IsNullOrEmpty(cepToValidate))
+        internal static bool IsCepValid(string cepToValidate) {
+            if (INumberValidator.IsValid(cepToValidate, "Cep"))
             {
-                throw new ArgumentNullException("O cep não pode ser vazio ou nulo.");
-            } else if(cepToValidate.Length != 8)
+                return IsCepCorrectLength(cepToValidate);
+            }
+            else
+            {
+                throw new Exception("Erro desconhecido: a validação do Cep falhou.");
+            }
+        }
+
+        internal static bool IsCepCorrectLength(string cepToValidate)
+        {
+            if (cepToValidate.Length != 8)
             {
                 throw new ArgumentException("O cep deve ter 8 caracteres.");
-            } else if(!cepToValidate.All(char.IsDigit))
-            {
-                throw new ArgumentException("O cep só pode ser composto por algarismos numéricos.");
-            } else
+            }
+            else
             {
                 return true;
             }
