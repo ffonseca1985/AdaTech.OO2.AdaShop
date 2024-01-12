@@ -30,5 +30,17 @@ namespace AdaTech.AdaShop.Domain.Models.Order
                 }
             }
         }
+
+        public Address(string street, string number, string complement, string neighborhood, string city, string state, string cep)
+        {
+            Street = street;
+            Cep = cep;
+            Number = number;
+            Complement = complement;
+            Neighborhood = neighborhood;
+            City = city;
+            State = state;
+            Cep = cep;
+        }
     }
 }
