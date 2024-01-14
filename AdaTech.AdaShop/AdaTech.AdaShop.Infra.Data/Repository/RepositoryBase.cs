@@ -25,13 +25,19 @@ namespace AdaTech.AdaShop.Infra.Data.Repository
         public List<T> GetAll()
         {
             return _itens;
-        }
+        } 
 
         public T GetById(string id)
         {
 
             var search = _itens.FirstOrDefault(x => x.ID == id);
             return search;
+        }
+
+        public bool Delete(string id)
+        {
+            int total = _itens.RemoveAll(x => x.ID == id);
+            return total > 0;
         }
     }
 }

@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace AdaTech.AdaShop.Application.Customer.Commands
 {
-    internal class DeleteCustomerCommand
+    public class DeleteCustomerCommand : IRequest<bool>
     {
+        public DeleteCustomerCommand(string iD)
+        {
+            ID = iD;
+        }
+
+        public string ID { get; set; }
     }
 }

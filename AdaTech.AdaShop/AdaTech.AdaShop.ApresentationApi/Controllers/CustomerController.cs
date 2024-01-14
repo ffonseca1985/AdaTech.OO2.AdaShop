@@ -46,10 +46,18 @@ namespace AdaTech.AdaShop.ApresentationApi.Controllers
             return Task.FromResult<ActionResult>(Ok());
         }
 
-        [HttpDelete]
-        public Task<ActionResult> Delete()
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete([Required] string id)
         {
-            return Task.FromResult<ActionResult>(Ok());
+            var command = new DeleteCustomerCommand(id);
+            var result = await _mediator.Send(command);
+
+            if (result == false)
+            {
+                return NotFound();
+            }
+
+            return StatusCode(204);
         }
     }
 }
