@@ -2,6 +2,8 @@
 namespace AdaTech.AdaShop.Domain.Models.Order
 {
     using AdaTech.AdaShop.Domain.Contracts;
+    using AdaTech.AdaShop.Domain.Models;
+
     public class OrderAggregate : IEntity
     {
         public OrderAggregate(Customer customer, ShippingCompany shippingCompany)

@@ -1,6 +1,6 @@
 ﻿using AdaTech.AdaShop.Domain.Contracts;
 
-namespace AdaTech.AdaShop.Domain.Models.Order
+namespace AdaTech.AdaShop.Domain.Models
 {
     public class Product : IEntity
     {
