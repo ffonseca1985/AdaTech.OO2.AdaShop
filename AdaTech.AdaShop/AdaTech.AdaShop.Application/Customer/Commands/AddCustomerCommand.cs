@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace AdaTech.AdaShop.Application.Customer.Commands
 {
-    internal class AddCustomerCommand
+    using Domain.Models;
+    using System.ComponentModel.DataAnnotations;
+
+    public class AddCustomerCommand : IRequest<Customer>
     {
+        [Required]
+        public string Name { get; set; }
     }
 }

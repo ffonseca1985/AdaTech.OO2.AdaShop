@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaTech.AdaShop.Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaTech.AdaShop.ApresentationApi", "AdaTech.AdaShop.ApresentationApi\AdaTech.AdaShop.ApresentationApi.csproj", "{5A4C7E0E-270A-4ABB-95A5-C32E0B32ADFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaTech.AdaShop.Infra.Ioc", "AdaTech.AdaShop.Infra.Ioc\AdaTech.AdaShop.Infra.Ioc.csproj", "{B3E727D4-6091-4157-9383-70C909EC14E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{5A4C7E0E-270A-4ABB-95A5-C32E0B32ADFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A4C7E0E-270A-4ABB-95A5-C32E0B32ADFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A4C7E0E-270A-4ABB-95A5-C32E0B32ADFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E727D4-6091-4157-9383-70C909EC14E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E727D4-6091-4157-9383-70C909EC14E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E727D4-6091-4157-9383-70C909EC14E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E727D4-6091-4157-9383-70C909EC14E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{316A955E-2C2D-4C6C-81B1-E51716BC5260} = {3B33A126-5A30-410C-A778-ED5CB33B6A00}
 		{C9B9E129-9C1E-40CE-A190-FBB15C276B47} = {7CC1853E-05D6-4019-ADFA-FA670FD8DE76}
 		{5A4C7E0E-270A-4ABB-95A5-C32E0B32ADFC} = {D311A6FB-08D8-41FC-9728-BA290FE64BD9}
+		{B3E727D4-6091-4157-9383-70C909EC14E6} = {3B33A126-5A30-410C-A778-ED5CB33B6A00}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BC39AFFA-9C68-4736-A444-DDA69CA9E402}

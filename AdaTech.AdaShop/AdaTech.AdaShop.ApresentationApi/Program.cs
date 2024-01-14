@@ -1,6 +1,8 @@
 
 namespace AdaTech.AdaShop.ApresentationApi
 {
+    using AdaTech.AdaShop.Infra.Ioc;
+
     public class Program
     {
         public static void Main(string[] args)
@@ -13,6 +15,9 @@ namespace AdaTech.AdaShop.ApresentationApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.ResgisterRepositories();
+            builder.Services.ResgisterMediator();
 
             var app = builder.Build();
 

@@ -4,9 +4,9 @@ namespace AdaTech.AdaShop.Domain.Models
 {
     public class Customer : IEntity
     {
-        public Customer(string iD, string name)
+        public Customer(string name)
         {
-            ID = iD;
+            ID = Guid.NewGuid().ToString();
             Name = name;
         }
 

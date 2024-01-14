@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AdaTech.AdaShop.Application.Customer.Commands;
+using AdaTech.AdaShop.Domain.Infra;
+using AdaTech.AdaShop.Domain.Models;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace AdaTech.AdaShop.ApresentationApi.Controllers
@@ -7,14 +11,20 @@ namespace AdaTech.AdaShop.ApresentationApi.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        public CustomerController()
+        readonly IRepositoryBase<Customer> _repository;
+        readonly IMediator _mediator;
+
+        public CustomerController(IRepositoryBase<Customer> repository, IMediator mediator)
         {
-                
+            _repository = repository;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public Task<ActionResult> Get() {
-            return Task.FromResult<ActionResult>(Ok());
+        public ActionResult Get() {
+
+            var result = _repository.GetAll();
+            return Ok(result);
         }
 
         [HttpGet("{id}")]
@@ -24,9 +34,10 @@ namespace AdaTech.AdaShop.ApresentationApi.Controllers
         }
 
         [HttpPost]
-        public Task<ActionResult> Post()
+        public async Task<ActionResult> Post([FromBody]AddCustomerCommand request)
         {
-            return Task.FromResult<ActionResult>(Ok());
+            var result = await _mediator.Send(request);
+            return StatusCode(201, result);
         }
 
         [HttpPut]
