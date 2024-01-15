@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdaTech.AdaShop.Domain\AdaTech.AdaShop.Domain.csproj" />
+    <ProjectReference Include="..\AdaTech.AdaShop.Infra.Data\AdaTech.AdaShop.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
