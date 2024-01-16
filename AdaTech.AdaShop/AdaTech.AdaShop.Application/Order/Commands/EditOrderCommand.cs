@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdaTech.AdaShop.Application.Customer.Commands
+namespace AdaTech.AdaShop.Application.Order.Commands
 {
-    internal class DeleteCustomerCommand
+    internal class EditOrderCommand
     {
     }
 }

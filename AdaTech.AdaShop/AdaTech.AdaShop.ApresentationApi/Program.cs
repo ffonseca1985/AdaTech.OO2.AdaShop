@@ -1,4 +1,6 @@
 
+using AdaTech.AdaShop.Infra.Ioc;
+
 namespace AdaTech.AdaShop.ApresentationApi
 {
     public class Program
@@ -14,6 +16,9 @@ namespace AdaTech.AdaShop.ApresentationApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            InitializeRepositories.RegisterRepository(builder.Services);
+            InitializeMediator.ResgisterMediator(builder.Services);
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -24,6 +29,7 @@ namespace AdaTech.AdaShop.ApresentationApi
             }
 
             app.UseAuthorization();
+
 
 
             app.MapControllers();

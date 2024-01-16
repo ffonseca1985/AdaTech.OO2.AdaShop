@@ -25,8 +25,8 @@
             ShippingCompany correiosShippingCompany = new CorreiosShippingCompany();
             ShippingCompany uberShippingCompany = new UberShippingCompany();
 
-            var order1 = new OrderAggregate(customer: null, shippingCompany: correiosShippingCompany);
-            var order2 = new OrderAggregate(customer: null, shippingCompany: uberShippingCompany);
+            var order1 = new OrderAggregate(customer: null, shippingCompany: correiosShippingCompany, null);
+            var order2 = new OrderAggregate(customer: null, shippingCompany: uberShippingCompany, null);
 
             Console.WriteLine("Hello, World!");
         }

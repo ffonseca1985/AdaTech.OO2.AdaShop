@@ -12,4 +12,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AdaTech.AdaShop.Application\AdaTech.AdaShop.Application.csproj" />
+    <ProjectReference Include="..\AdaTech.AdaShop.Infra.Ioc\AdaTech.AdaShop.Infra.Ioc.csproj" />
+  </ItemGroup>
+
 </Project>

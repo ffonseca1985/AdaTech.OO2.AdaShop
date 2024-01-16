@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using AdaTech.AdaShop.Application.Customer.Commands;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AdaTech.AdaShop.ApresentationApi.Controllers
 {
@@ -7,38 +8,18 @@ namespace AdaTech.AdaShop.ApresentationApi.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        public CustomerController()
-        {
-                
-        }
+        private IMediator _mediator;
 
-        [HttpGet]
-        public Task<ActionResult> Get() {
-            return Task.FromResult<ActionResult>(Ok());
-        }
-
-        [HttpGet("{id}")]
-        public Task<ActionResult> Get([Required]string id)
+        public CustomerController(IMediator mediator)
         {
-            return Task.FromResult<ActionResult>(Ok());
+            _mediator = mediator;
         }
 
         [HttpPost]
-        public Task<ActionResult> Post()
+        public async Task<IActionResult> Post(AddCustomerCommand command)
         {
-            return Task.FromResult<ActionResult>(Ok());
-        }
-
-        [HttpPut]
-        public Task<ActionResult> Put()
-        {
-            return Task.FromResult<ActionResult>(Ok());
-        }
-
-        [HttpDelete]
-        public Task<ActionResult> Delete()
-        {
-            return Task.FromResult<ActionResult>(Ok());
+            var result = await _mediator.Send(command);
+            return StatusCode(201, result);
         }
     }
 }

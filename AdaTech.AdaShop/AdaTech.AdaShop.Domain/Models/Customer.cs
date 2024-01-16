@@ -12,5 +12,12 @@ namespace AdaTech.AdaShop.Domain.Models
 
         public string ID { get; private set; }
         public string Name { get; private set; }
+
+        public void Edit(string name)
+        {
+            if (string.IsNullOrEmpty(name)) throw new ArgumentException("Name is empty");
+
+            this.Name = name;
+        }
     }
 }

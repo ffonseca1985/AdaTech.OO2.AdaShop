@@ -1,9 +1,10 @@
 ﻿using AdaTech.AdaShop.Domain.Contracts;
+using AdaTech.AdaShop.Domain.Infra.Data;
 
 namespace AdaTech.AdaShop.Infra.Data.Repository
 {
     //Camada de Infra é um servico que consulta servicos externos, por exemplo: Banco de dados, Uma api, Uma Dll, Um Fila etc
-    public class RepositoryBase<T> where T : IEntity
+    public class RepositoryBase<T> : IRepositoryBase<T> where T : IEntity
     {
         private List<T> _itens;
         public RepositoryBase()
@@ -31,6 +32,11 @@ namespace AdaTech.AdaShop.Infra.Data.Repository
 
             var search = _itens.FirstOrDefault(x => x.ID == id);
             return search;
+        }
+
+        public void Update(T obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
