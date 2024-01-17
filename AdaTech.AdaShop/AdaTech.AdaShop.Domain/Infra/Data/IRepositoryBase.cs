@@ -10,5 +10,6 @@ namespace AdaTech.AdaShop.Domain.Infra.Data
         IEnumerable<T> Get(Func<T, bool> func);
         List<T> GetAll();
         T GetById(string id);
+        void Delete(string id);
     }
 }

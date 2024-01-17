@@ -6,6 +6,10 @@ namespace AdaTech.AdaShop.Infra.Data.Repository
     //Camada de Infra é um servico que consulta servicos externos, por exemplo: Banco de dados, Uma api, Uma Dll, Um Fila etc
     public class RepositoryBase<T> : IRepositoryBase<T> where T : IEntity
     {
+        //Customer
+        //Este repositorio faz tudo, get, insert, update, delete
+
+        //O chefe mudou a regra, agora customer não pode ser deletado
         private List<T> _itens;
         public RepositoryBase()
         {
@@ -35,6 +39,11 @@ namespace AdaTech.AdaShop.Infra.Data.Repository
         }
 
         public void Update(T obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(string id)
         {
             throw new NotImplementedException();
         }

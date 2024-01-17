@@ -11,6 +11,7 @@ namespace AdaTech.AdaShop.Infra.Ioc
         {
             //registrando/mapeado os tipos genericos
             services.AddSingleton(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+            services.AddSingleton<ICustomerRepository, CustomerRepository>();
             return services;
         } 
     }

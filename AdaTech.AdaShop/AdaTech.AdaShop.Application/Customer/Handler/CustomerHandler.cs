@@ -23,8 +23,8 @@ namespace AdaTech.AdaShop.Application.Customer.Handler
     public class CustomerHandler : IRequestHandler<AddCustomerCommand, Customer>,
                                    IRequestHandler<EditCustomerCommand, Unit>
     {
-        private readonly IRepositoryBase<Customer> _repository;
-        public CustomerHandler(IRepositoryBase<Customer> repository)
+        private readonly ICustomerRepository _repository;
+        public CustomerHandler(ICustomerRepository repository)
         {
             _repository = repository;
         }
