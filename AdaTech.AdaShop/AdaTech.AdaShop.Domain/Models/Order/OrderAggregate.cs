@@ -46,6 +46,8 @@ namespace AdaTech.AdaShop.Domain.Models.Order
         public DateTime OrderDate { get; private set; }
         public DateTime ModifyDate { get; private set; }
         public Employee? Employee { get; private set; }
+
+        //Nota-se que ShippingCompany é uma abstração porque queremos usar o OCP
         public ShippingCompany ShippingCompany { get; private set; }
     }
 }
